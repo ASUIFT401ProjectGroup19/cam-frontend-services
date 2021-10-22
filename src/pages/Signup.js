@@ -12,6 +12,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import * as Util from "util";
+const { AuthenticationServiceClient } = require('../grpc/api_grpc_web_pb')
+const{ CreateAccountResponse, CreateAccountRequest } = require('../grpc/api_pb')
+
 
 function Copyright(props) {
     return (
@@ -29,15 +33,27 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-    const handleSubmit = (event) => {
+
+    const client = new AuthenticationServiceClient('http://localhost:9090')
+
+    const  handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
+        const email= data.get('email')
+        const password= data.get('password')
+        const request = new CreateAccountRequest();
+        request.setAccountName(email)
+
+        client.createAccount(request, {}, (err, response) => {
+            if (response == null) {
+                console.log(err)
+            }else {
+                if(response.getSuccess()){
+                    alert("User account "+email+" successfully created!")
+                }
+            }
         });
-    };
+    }
 
     return (
         <ThemeProvider theme={theme}>
@@ -109,10 +125,10 @@ export default function SignUp() {
                             </Grid>
                         </Grid>
                         <Button
-                            type="submit"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
+                            type="submit"
                         >
                             Sign Up
                         </Button>
