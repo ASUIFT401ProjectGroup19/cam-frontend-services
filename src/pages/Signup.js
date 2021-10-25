@@ -34,7 +34,7 @@ const theme = createTheme();
 
 export default function SignUp() {
 
-    const client = new AuthenticationServiceClient('http://localhost:9090')
+    const client = new AuthenticationServiceClient('http://localhost:9090',null,null)
 
     const  handleSubmit = async (event) => {
         event.preventDefault();
