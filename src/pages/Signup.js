@@ -41,8 +41,13 @@ export default function SignUp() {
         const data = new FormData(event.currentTarget);
         const email= data.get('email')
         const password= data.get('password')
+        const firstName = data.get('firstName')
+        const lastName = data.get('lastName')
         const request = new CreateAccountRequest();
-        request.setAccountName(email)
+        request.setUserName(email)
+        request.setPassword(password)
+        request.setFirstName(firstName)
+        request.setLastName(lastName)
 
         client.createAccount(request, {}, (err, response) => {
             if (response == null) {

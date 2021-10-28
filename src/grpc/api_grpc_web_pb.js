@@ -132,5 +132,66 @@ proto.authentication.v1.AuthenticationServicePromiseClient.prototype.createAccou
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.authentication.v1.LoginRequest,
+ *   !proto.authentication.v1.LoginResponse>}
+ */
+const methodDescriptor_AuthenticationService_Login = new grpc.web.MethodDescriptor(
+  '/authentication.v1.AuthenticationService/Login',
+  grpc.web.MethodType.UNARY,
+  proto.authentication.v1.LoginRequest,
+  proto.authentication.v1.LoginResponse,
+  /**
+   * @param {!proto.authentication.v1.LoginRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.authentication.v1.LoginResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.authentication.v1.LoginRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.authentication.v1.LoginResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.authentication.v1.LoginResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.authentication.v1.AuthenticationServiceClient.prototype.login =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/authentication.v1.AuthenticationService/Login',
+      request,
+      metadata || {},
+      methodDescriptor_AuthenticationService_Login,
+      callback);
+};
+
+
+/**
+ * @param {!proto.authentication.v1.LoginRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.authentication.v1.LoginResponse>}
+ *     Promise that resolves to the response
+ */
+proto.authentication.v1.AuthenticationServicePromiseClient.prototype.login =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/authentication.v1.AuthenticationService/Login',
+      request,
+      metadata || {},
+      methodDescriptor_AuthenticationService_Login);
+};
+
+
 module.exports = proto.authentication.v1;
 
