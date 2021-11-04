@@ -1,0 +1,29 @@
+services:
+  frontend:
+    command: npm start
+    environment:
+      NODE_OPTIONS: --openssl-legacy-provider
+    image: node
+    networks:
+    - compose-proxy
+    ports:
+    - 3000:3000
+    volumes:
+    - .:/app
+    working_dir: /app
+  envoy:
+    command: /usr/local/bin/envoy -c /etc/envoy/envoy.yaml
+    image: envoyproxy/envoy:v1.20-latest
+    networks:
+    - compose-proxy
+    ports:
+    - 9090:9090
+    - 9901:9901
+    privileged: true
+    volumes:
+    - type: bind
+      source: src/envoy/envoy.yaml
+      target: /etc/envoy/envoy.yaml
+networks:
+  compose-proxy:
+    name: compose_proxy
