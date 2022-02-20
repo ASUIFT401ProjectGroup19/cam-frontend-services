@@ -1,0 +1,193 @@
+body {
+  background-color: #ececec !important;
+}
+
+.hero-container-primary {
+  background: #ececec;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.profile-container {
+  background: #ececec;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  object-fit: contain;
+}
+
+.card-half {
+  height: 80vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-2nd-half {
+  background: #ececec !important;
+  height: 75%;
+  width: 100%;
+}
+
+.hero-info {
+  background: #ececec;
+  width: 100%;
+}
+
+.header-non-hero {
+  background: #333132;
+  color: #00f782;
+  height: 60px;
+  width: 100%;
+}
+
+.App {
+  background: #ececec;
+}
+
+a:link {
+  color: #00f782;
+}
+
+/* visited link */
+a:visited {
+  color: #00f782;
+}
+
+a:hover {
+  color: #00b35f;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.hero-container-primary {
+  background: #ececec;
+  height: 75vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.hero-container-primary-no-flex {
+  background: #ececec;
+  height: 65vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: contain;
+}
+
+.hero-container-secondary {
+  background: #7c7c7c;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.image {
+  max-height: 40vh !important;
+  width: auto;
+}
+
+.hero-info {
+  background: #ececec;
+  width: 100%;
+}
+
+.header-hero {
+  background: #333132;
+  color: #00f782;
+  height: 5.5vh;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.hero-footer {
+  background: #333132;
+  color: #00f782;
+  height: 5.5vh;
+  width: 100%;
+}
+
+.MuiButton-root {
+  background-color: #00f782 !important;
+  color: #333132 !important;
+}
+
+.MuiAvatar-root {
+  background-color: #00f782 !important;
+  color: #333132 !important;
+}
+
+.hero-container-primary {
+  background: #ececec;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.profile-container {
+  background: #ececec;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  object-fit: contain;
+}
+
+.card-half {
+  height: 80vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-2nd-half {
+  background: #ececec !important;
+  height: 75%;
+  width: 100%;
+}
+
+.hero-info {
+  background: #ececec;
+  width: 100%;
+}
+
+.header-non-hero {
+  background: #333132;
+  color: #00f782;
+  height: 60px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=App.css.map */

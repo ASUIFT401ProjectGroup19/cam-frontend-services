@@ -1,0 +1,325 @@
+@use 'base';
+
+$primary : base.$primary-DEFAULT;
+$text: base.$gray-dark;
+
+body{
+  background-color: base.$gray-lightest !important;
+}
+
+.hero-container-primary {
+  background: base.$gray-lightest;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+//
+
+.profile-container {
+  background: base.$gray-lightest;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  object-fit: contain;
+}
+//
+.card-half{
+  height:80vh;
+  width:90%;
+  display: flex;
+  flex-direction: column;
+
+}
+.card-2nd-half{
+  background: base.$gray-lightest !important;
+  height:75%;
+  width:100%;
+}
+//.MuiPaper-root{
+//  background: base.$gray-lightest;
+//
+//}
+//.bg-light{
+//  background: base.$gray-lightest;
+//  height:100vh;
+//}
+//.hero-container-primary-no-flex {
+//  background: base.$gray-lightest;
+//  height: 65vh;
+//  max-height: 900px;
+//  width: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  object-fit: contain;
+//}
+//.hero-container-secondary {
+//  background: base.$gray-DEFAULT;
+//  height: 100vh;
+//  max-height: 900px;
+//  width: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+//  object-fit: contain;
+//}
+//
+.hero-info {
+  background: base.$gray-lightest;
+  width: 100%;
+}
+
+//.header-hero{
+//  background: base.$gray-dark;
+//  color: base.$primary-DEFAULT;
+//  position: fixed;
+//  height:60px;
+//  width:100%;
+//  z-index: 5;
+//}
+.header-non-hero{
+  background: base.$gray-dark;
+  color: base.$primary-DEFAULT;
+  height:60px;
+  width:100%;
+}
+//.hero-footer{
+//  background: base.$gray-dark;
+//  color: base.$primary-DEFAULT;
+//  height:5.5vh;
+//  width:100%;
+//}
+//
+//.MuiButton-root{
+//  background-color:$primary!important;
+//  color:$text!important;
+//
+//}
+//
+//.MuiAvatar-root{
+//  background-color:$primary!important;
+//  color:$text!important;
+//
+//}
+//
+//body{
+//  margin: 0;
+//  padding: 0;
+//  background-color: #000;
+//}
+.App{
+
+  background: base.$gray-lightest;
+}
+
+a:link {
+  color:  #00f782;
+}
+
+/* visited link */
+a:visited {
+  color: #00f782;
+}
+
+
+a:hover {
+  color: base.$primary-dark;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+$primary: base.$primary-DEFAULT;
+$text: base.$gray-dark;
+
+.hero-container-primary {
+  background: base.$gray-lightest;
+  height: 75vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.hero-container-primary-no-flex {
+  background: base.$gray-lightest;
+  height: 65vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: contain;
+}
+
+.hero-container-secondary {
+  background: base.$gray-DEFAULT;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.image {
+  max-height: 40vh !important;
+  width:auto;
+}
+
+.hero-info {
+  background: base.$gray-lightest;
+  width: 100%;
+}
+
+.header-hero {
+  background: base.$gray-dark;
+  color: base.$primary-DEFAULT;
+  height: 5.5vh;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.hero-footer {
+  background: base.$gray-dark;
+  color: base.$primary-DEFAULT;
+  height: 5.5vh;
+  width: 100%;
+}
+
+.MuiButton-root {
+  background-color: $primary !important;
+  color: $text !important;
+
+}
+
+.MuiAvatar-root {
+  background-color: $primary !important;
+  color: $text !important;
+
+}
+
+.hero-container-primary {
+  background: base.$gray-lightest;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+//
+
+.profile-container {
+  background: base.$gray-lightest;
+  height: 100vh;
+  max-height: 900px;
+  width: 100%;
+  display: flex;
+  object-fit: contain;
+}
+//
+.card-half{
+  height:80vh;
+  width:90%;
+  display: flex;
+  flex-direction: column;
+
+}
+.card-2nd-half{
+  background: base.$gray-lightest !important;
+  height:75%;
+  width:100%;
+}
+//.MuiPaper-root{
+//  background: base.$gray-lightest;
+//
+//}
+//.bg-light{
+//  background: base.$gray-lightest;
+//  height:100vh;
+//}
+//.hero-container-primary-no-flex {
+//  background: base.$gray-lightest;
+//  height: 65vh;
+//  max-height: 900px;
+//  width: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  object-fit: contain;
+//}
+//.hero-container-secondary {
+//  background: base.$gray-DEFAULT;
+//  height: 100vh;
+//  max-height: 900px;
+//  width: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+//  object-fit: contain;
+//}
+//
+.hero-info {
+  background: base.$gray-lightest;
+  width: 100%;
+}
+
+//.header-hero{
+//  background: base.$gray-dark;
+//  color: base.$primary-DEFAULT;
+//  position: fixed;
+//  height:60px;
+//  width:100%;
+//  z-index: 5;
+//}
+.header-non-hero{
+  background: base.$gray-dark;
+  color: base.$primary-DEFAULT;
+  height:60px;
+  width:100%;
+}
+//.hero-footer{
+//  background: base.$gray-dark;
+//  color: base.$primary-DEFAULT;
+//  height:5.5vh;
+//  width:100%;
+//}
+//
+//.MuiButton-root{
+//  background-color:$primary!important;
+//  color:$text!important;
+//
+//}
+//
+//.MuiAvatar-root{
+//  background-color:$primary!important;
+//  color:$text!important;
+//
+//}
+//
+//body{
+//  margin: 0;
+//  padding: 0;
+//  background-color: #000;
+//}

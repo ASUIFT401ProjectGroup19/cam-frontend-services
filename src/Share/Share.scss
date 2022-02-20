@@ -1,0 +1,21 @@
+@use "../Sass/base";
+
+.Mui-button-secondary{
+  background: #7a7a7a !important;
+  color:white;
+
+}
+
+.Mui-button-primary{
+  background: base.$primary-DEFAULT !important;
+  color:white;
+
+}
+
+#cancel-btn{
+  background: base.$gray-lightest !important;
+}
+
+#add-btn{
+  background: #00b35f;
+}
