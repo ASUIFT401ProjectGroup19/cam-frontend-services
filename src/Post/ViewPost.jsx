@@ -10,18 +10,19 @@ export default function ViewPost() {
     let params = useParams();
     const [postData, setPostData] = React.useState();
     let postContent = {
-        user: 'f',
+        user: '',
         description: "",
         media: [],
         userId: 1,
+        comments: [],
+        postId: 0
     }
-    const [post, setPost] = React.useState({postContent: postContent, comments: []});
+    const [post, setPost] = React.useState({postContent: postContent});
 
 
     React.useEffect(() => {
         async function getPost(postId) {
             const auth = getAuthToken()
-            console.log("token for posting is: " + auth)
             const requestOptions = {
                 method: 'GET',
                 headers: {
@@ -45,13 +46,20 @@ export default function ViewPost() {
         if (typeof (postData) !== "undefined") {
             let media = postData.post.media;
             let description = postData.post.description;
+            let comments = postData.post.comments;
+            let userName = postData.post.userName;
+            let userId = postData.post.userId;
 
             setPost({
                 ...post,
                 postContent: {
                     ...post.postContent,
                     media: media,
-                    description: description
+                    description: description,
+                    comments: comments,
+                    postId: params.postId,
+                    userName: userName,
+                    userId: userId
                 }
             })
         }

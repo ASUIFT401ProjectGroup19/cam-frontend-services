@@ -44,10 +44,8 @@ export default function SignUp() {
         request["password"] = password
         request["firstName"] = firstName
         request["lastName"] = lastName
-        console.log(request)
 
         createAccount(request).then(response => {
-            console.log(response)
             if (response.hasOwnProperty("success")) {
                 if (response.success === true) {
                     alert("User account " + email + " successfully created!")

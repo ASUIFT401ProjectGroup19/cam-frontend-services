@@ -4,10 +4,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Post from "../Post/Post";
 import "./Arrow.scss"
 import {getAuthToken} from "../Util/Util";
+import {useLocation} from "react-router-dom";
 
 
-export default function Feed() {
+export default function FeedAll() {
     const auth = getAuthToken();
+
+    let location = useLocation();
+
     const [posts, setPosts] = React.useState([])
 
     React.useEffect(async () => {
@@ -25,8 +29,7 @@ export default function Feed() {
                 'Authorization': auth
             }
         };
-        //11001 DEBUG PORT
-        let response = await fetch(`http://localhost:11000/feed/v1?page=1&batchSize=32537`, requestOptions)
+         let response = await fetch(`http://localhost:11000/feed/v1/all?page=1&batchSize=3253307`, requestOptions)
 
 
         return response.json()
@@ -43,7 +46,7 @@ export default function Feed() {
 
     let postContent = {
         user: '',
-        description: "Your post feed is empty!",
+        description: "",
         media: [],
         userId: 0,
         comments: []
@@ -68,8 +71,8 @@ export default function Feed() {
         if (typeof (displayPost) !== "undefined") {
             let media = displayPost.media;
             let description = displayPost.description;
-            let userName = displayPost.userName;
             let comments = await getComments(displayPost.id);
+            let userName = displayPost.userName;
 
 
             setPost({
@@ -80,7 +83,7 @@ export default function Feed() {
                     description: description,
                     comments: comments,
                     postId: displayPost.id,
-                    userName: userName
+                    userName:displayPost.userName
                 }
             })
         }

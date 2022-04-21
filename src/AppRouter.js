@@ -12,6 +12,7 @@ import Feed from "./Feed/Feed";
 import Profile from "./Profile/Profile";
 import Share from "./Share/Share";
 import ViewPost from "./Post/ViewPost";
+import FeedAll from "./Feed/FeedAll";
 
 function AppRouter() {
     let location = useLocation();
@@ -19,29 +20,29 @@ function AppRouter() {
     let loc = location.pathname.toString()
     const [session, setSession] = React.useState('')
     const setSessionState = (session) => {
-        //console.log('session set' + session)
         localStorage.setItem("token", session)
         setSession(session)
     }
+    console.log(getAuthToken())
 
-    React.useEffect(() => {
-
+    React.useEffect(async () => {
         if (location.pathname.toString() !== "") {
-            if (!isTokenValid()) {
+            if (await isTokenValid()===false) {
                 if (location.pathname.toString() !== "/" && location.pathname.toString() !== "") {
-                    console.log(location.pathname)
+
                     logout()
-                    console.log(location.pathname.toString())
                 }
             } else {
-                setSession(getAuthToken)
                 console.log('logged in')
+                setSession(getAuthToken)
             }
         }
     }, [location.pathname])
 
     function logout() {
-        navigate("")
+        setSession('')
+        localStorage.removeItem('token')
+        navigate("/")
     }
     return (
         <Routes>
@@ -49,13 +50,19 @@ function AppRouter() {
             <Route path="" element={<Feed/>}/>
             }
             {session !== '' &&
-            <Route path="/profile" element={<Profile/>}/>
+            <Route path="/profile/:userId" element={<Profile/>}/>
+            }
+            {session !== '' &&
+            <Route path="/profile/" element={<Profile/>}/>
             }
             {session !== '' &&
             <Route path="/share" element={<Share/>}/>
             }
             {session !== '' &&
             <Route path="/post/:postId" element={<ViewPost/>}/>
+            }
+            {session !== '' &&
+            <Route path="/all/" element={<FeedAll/>}/>
             }
             {session === '' &&
             <Route path="" element={<Home setSession={setSessionState}/>}/>

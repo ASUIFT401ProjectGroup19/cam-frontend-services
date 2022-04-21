@@ -128,6 +128,11 @@ a:visited {
   color: #00f782;
 }
 
+.carousel img{
+
+  object-fit: cover;
+  overflow: hidden;
+}
 
 a:hover {
   color: base.$primary-dark;

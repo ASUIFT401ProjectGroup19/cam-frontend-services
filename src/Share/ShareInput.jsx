@@ -108,7 +108,6 @@ export default function SharePost() {
 
     async function createPost(post) {
         const auth = getAuthToken()
-        console.log("token for posting is: "+auth)
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -131,7 +130,7 @@ export default function SharePost() {
             newPost.post.media = [...newPost.post.media, {link: images[index]}]
         }
         const postResponse = await createPost(newPost)
-        console.log(postResponse)
+
         if(postResponse.hasOwnProperty("id")){
             navigate(`/post/${postResponse.id}`)
         }

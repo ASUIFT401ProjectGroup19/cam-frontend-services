@@ -3,9 +3,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
+import {Button} from "@mui/material";
 
-export default function Header() {
-
+export default function Header(props) {
+    const executeScroll = props.executeScroll;
     return (
         <div className="header-non-hero">
             <Grid container alignItems='center'>
@@ -24,7 +25,7 @@ export default function Header() {
                 <Grid item xs={1}></Grid>
                 <Grid item xs={6}/>
                 <Grid item xs={1}><Link to="/">Login</Link></Grid>
-                <Grid item xs={1}><Link to="/">Sign Up</Link></Grid>
+                <Grid item xs={1}><Button onClick={executeScroll}> Sign Up</Button></Grid>
             </Grid>
         </div>
     )

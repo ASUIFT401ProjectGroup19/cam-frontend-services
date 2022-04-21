@@ -24,7 +24,7 @@ export default function SigninHero(props) {
         request["userName"] = email
         request["password"] = password
         let response = await getToken(email, password)
-        console.log(response)
+
         if (response.hasOwnProperty("token")) {
             setSession(response.token)
 
